@@ -39,7 +39,7 @@ int main()
         
         
         std::string s1024 = test_input.substr(number_of_blocks*128, 128);
-        std::cout << "1024-bit block #" << j+1 << " = " << s1024 << std::endl;
+        std::cout << "1024-bit block #" << number_of_blocks+1 << " = " << s1024 << std::endl;
         /*s1024.c_str();
         
         std::string roundOutput;
