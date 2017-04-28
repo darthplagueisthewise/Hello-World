@@ -12,10 +12,12 @@
                                  
 int main()
 {
-    int number_of_blocks = 0;
     
-    string hash_buffer[8]; // previous 512-bit hash value
     
+    std::string hash_buffer[8]; // previous 512-bit hash value
+    std::string roundOuput[8];  // latest 512-bit hash value
+  
+  
     // 8 initial 64-bit buffer values in hex
     hash_buffer[0] = {"6A09E667F3BCC908"};
     hash_buffer[1] = {"BB67AE8584CAA73B"};
@@ -26,22 +28,19 @@ int main()
     hash_buffer[6] = {"1F83D9ABFB41BD6B"};
     hash_buffer[7] = {"5BE0CD19137E2179"};
     
-    // This is 3072-bit test input  
-    string input="fjaskljfowjfeifjakfjadsefwifjeuwfncncuanjdsklndjsalfjsdf
-    jkhsafkasfnj44kjafklsj3j3hk45hu34n56byl2bl32b345blh63lhblhasjwehrljklf
-    hasjdhcnasjkdfhjlhlasgdfhljh43j3lk4lhk5jglejrhljjcbvnfdjfdashkjwhjfnbl
-    ajkncailufewnflakjhvljkashfkjasbhkkjhlkj3h4uh3u4k5hlkj34hily3ty3i4g5ib
-    lnvjajfdsglkjhgjksdhjgkhsreiuhsgheuiuskhgfuerisgnli3453klh5u3345jhwiyw
-    rwejksdfajerthkerljthlkej3lk4jhjkh34lkjh34nh56";
+    // This is 384-byte (3072-bit) test input  
+    std::string test_input = "fjaskljfowjfeifjakfjadsefwifjeuwfncncuanjdsklndjkalfjsdfjkhsafkasfnj44kjafklsj3j3hk45hu34n56byl2bl32b345blh63lhblhasjwehrljklfhasjdhcnasjkdfhjlhlasgdfhljh43j3lk4lhk5jglejrhljjcbvnfdjfdashkjwhjfnblajkncailufewnflakjhvljkashfkjasbhkkjhlkj3h4uh3u4k5hlkj34hily3ty3i4g5iblnvjajfdsglkjhgjksdhjgkhsreiuhsgheuiuskhgfuerisgnli3453klh5u3345jhwiywrwejksdfajerthkerljthlkej3lk4jhjkh34lkjh34nh56";
 
     
     // for loop for however many 1024 bit blocks exist in plaintext message
-
-    for (int j = 0; j < string_name.size(); j += 128){
+    int number_of_blocks = 0;
+  
+    for (int j = 0; j < test_input.size(); j += 128) {
         
         
         std::string s1024 = string_name.substr(number_of_blocks*128, 128);
-        s1024.c_str();
+        std::cout << "1024-bit block #" << j+1 << " = " << s1024 << endl;
+        /*s1024.c_str();
         
         std::string roundOutput;
         
@@ -54,7 +53,7 @@ int main()
             hash_buffer[i] = addition( strtoull(hash_buffer[i].c_str(), NULL, 16), strtoull(newBuffer.c_str(), NULL, 16)  );
         }
         
-        
+        */
         
         number_of_blocks++;
         
