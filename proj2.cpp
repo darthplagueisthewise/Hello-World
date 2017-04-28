@@ -19,14 +19,14 @@ int main()
   
   
     // 8 initial 64-bit buffer values in hex
-    hash_buffer[0] = {"6A09E667F3BCC908"};
-    hash_buffer[1] = {"BB67AE8584CAA73B"};
-    hash_buffer[2] = {"3C6EF372FE94F82B"};
-    hash_buffer[3] = {"A54FF53A5F1D36F1"};
-    hash_buffer[4] = {"510E527FADE682D1"};
-    hash_buffer[5] = {"9B05688C2B3E6C1F"};
-    hash_buffer[6] = {"1F83D9ABFB41BD6B"};
-    hash_buffer[7] = {"5BE0CD19137E2179"};
+    hash_buffer[0] = "6A09E667F3BCC908";
+    hash_buffer[1] = "BB67AE8584CAA73B";
+    hash_buffer[2] = "3C6EF372FE94F82B";
+    hash_buffer[3] = "A54FF53A5F1D36F1";
+    hash_buffer[4] = "510E527FADE682D1";
+    hash_buffer[5] = "9B05688C2B3E6C1F";
+    hash_buffer[6] = "1F83D9ABFB41BD6B";
+    hash_buffer[7] = "5BE0CD19137E2179";
     
     // This is 384-byte (3072-bit) test input  
     std::string test_input = "fjaskljfowjfeifjakfjadsefwifjeuwfncncuanjdsklndjkalfjsdfjkhsafkasfnj44kjafklsj3j3hk45hu34n56byl2bl32b345blh63lhblhasjwehrljklfhasjdhcnasjkdfhjlhlasgdfhljh43j3lk4lhk5jglejrhljjcbvnfdjfdashkjwhjfnblajkncailufewnflakjhvljkashfkjasbhkkjhlkj3h4uh3u4k5hlkj34hily3ty3i4g5iblnvjajfdsglkjhgjksdhjgkhsreiuhsgheuiuskhgfuerisgnli3453klh5u3345jhwiywrwejksdfajerthkerljthlkej3lk4jhjkh34lkjh34nh56";
@@ -38,8 +38,8 @@ int main()
     for (int j = 0; j < test_input.size(); j += 128) {
         
         
-        std::string s1024 = string_name.substr(number_of_blocks*128, 128);
-        std::cout << "1024-bit block #" << j+1 << " = " << s1024 << endl;
+        std::string s1024 = test_input.substr(number_of_blocks*128, 128);
+        std::cout << "1024-bit block #" << j+1 << " = " << s1024 << std::endl;
         /*s1024.c_str();
         
         std::string roundOutput;
